@@ -24,15 +24,9 @@ export class HeroComponent implements OnInit {
     scene.add(pointLight);
     let geometry, material, plane;
     createPlane();
-
-    const canvasSizes = {
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
-
     const camera = new THREE.PerspectiveCamera(
       75,
-      canvasSizes.width / canvasSizes.height,
+      window.innerWidth / window.innerHeight,
       0.001,
       1000
     );
@@ -45,7 +39,7 @@ export class HeroComponent implements OnInit {
       antialias: true,
     });
     renderer.setClearColor(0xe232222, 1);
-    renderer.setSize(canvasSizes.width, canvasSizes.height);
+    renderer.setSize( window.innerWidth, window.innerHeight );
     var noise4D = createNoise4D();
     const animate = function () {
       for (var i = 0; i < geometry.getAttribute('position').count; i++) {
