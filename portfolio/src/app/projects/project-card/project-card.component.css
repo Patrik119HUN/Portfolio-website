@@ -1,0 +1,4 @@
+.greenSVG {
+  filter: invert(68%) sepia(23%) saturate(347%) hue-rotate(81deg)
+    brightness(91%) contrast(84%);
+}
