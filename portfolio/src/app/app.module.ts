@@ -7,8 +7,10 @@ import { HeroComponent } from './hero/hero.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { ProjectsModule } from './projects/projects.module';
+import { AboutComponent } from './about/about.component';
+import { TechStackComponent } from './tech-stack/tech-stack.component';
 @NgModule({
-  declarations: [AppComponent, HeroComponent, NavbarComponent],
+  declarations: [AppComponent, HeroComponent, NavbarComponent, AboutComponent, TechStackComponent],
   imports: [BrowserModule, ProjectsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
