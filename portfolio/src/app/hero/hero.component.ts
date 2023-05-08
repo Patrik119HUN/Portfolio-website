@@ -39,7 +39,7 @@ export class HeroComponent implements OnInit {
       antialias: true,
     });
     renderer.setClearColor(0xe232222, 1);
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize(window.innerWidth, window.outerHeight, false);
     var noise4D = createNoise4D();
     const animate = function () {
       for (var i = 0; i < geometry.getAttribute('position').count; i++) {

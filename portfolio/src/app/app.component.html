@@ -1,6 +1,25 @@
-<app-hero></app-hero>
-<app-about></app-about>
-<app-projects></app-projects>
-<app-tech-stack></app-tech-stack>
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<div [ngClass]="{ dark: isDarkEnable }">
+  <app-hero>
+    <a
+      *ngIf="isDarkEnable"
+      (click)="changeTheme()"
+      mode-button
+      style="font-size: 30px"
+      ><img src="assets/sun.svg" alt=""
+    /></a>
+    <a
+      *ngIf="!isDarkEnable"
+      (click)="changeTheme()"
+      mode-button
+      style="font-size: 30px"
+      ><img src="assets/moon.svg" alt=""
+    /></a>
+  </app-hero>
+  <app-about></app-about>
+  <app-projects></app-projects>
+  <app-tech-stack></app-tech-stack>
+  <app-navbar></app-navbar>
+  <app-contact></app-contact>
+  <app-footer></app-footer>
+  <router-outlet></router-outlet>
+</div>

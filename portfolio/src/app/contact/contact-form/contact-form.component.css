@@ -1,0 +1,8 @@
+input,
+button,
+textarea {
+  @apply shadow-[0_0_0_10px] px-5 shadow-Lime-green rounded-[10px] bg-Light-green  outline-0 text-Very-Dark-cyan placeholder-Dark-cyan;
+}
+.error {
+  @apply py-3 text-lg font-semibold text-red-700 font-fira-code;
+}
