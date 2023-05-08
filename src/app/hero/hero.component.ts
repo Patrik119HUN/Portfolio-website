@@ -63,5 +63,15 @@ export class HeroComponent implements OnInit {
       scene.add(plane);
       plane.rotation.x = Math.PI / 2;
     }
+    /***RESIZE***/
+    window.addEventListener('resize', () => {
+      document.querySelector('canvas').style.width = window.innerWidth + 'px';
+      document.querySelector('canvas').style.height = window.outerHeight + 'px';
+
+      renderer.setSize(window.innerWidth, window.outerHeight,false);
+
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+    });
   }
 }

@@ -1,9 +1,9 @@
-<form [formGroup]="myForm" class="w-full h-full" (ngSubmit)="sendEmail($event)" >
+<form [formGroup]="myForm" class="w-full h-full" (ngSubmit)="sendEmail($event)">
   <div class="flex flex-col h-full m-5 justify-evenly">
     <div class="w-full h-1/5">
       <input
         type="text"
-          required
+        required
         placeholder="Your name"
         formControlName="name"
         name="name"
@@ -29,8 +29,11 @@
         required
         formControlName="message"
         name="message"
-        class="w-full text-xl h-4/5"></textarea>
-      <p class="error" *ngIf="message.invalid && message.touched">Message must!</p>
+        class="w-full text-xl h-4/5"
+      ></textarea>
+      <p class="error" *ngIf="message.invalid && message.touched">
+        Message must!
+      </p>
     </div>
     <button
       class="w-1/4 shadow-[0_0_0_10px] px-5 shadow-Lime-green rounded-[10px] bg-Light-green h-16 outline-0 text-2xl text-Very-Dark-cyan transition-transform duration-300 delay-75 hover:-translate-y-2"
@@ -39,6 +42,6 @@
     >
       Send!
     </button>
-      <p class="error" *ngIf="succes">Message sent</p>
+    <p class="error" *ngIf="succes">Message sent</p>
   </div>
 </form>
