@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { CookieService } from 'ngx-cookie-service';
+import { SsrCookieService } from 'ngx-cookie-service-ssr';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,9 +8,10 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AppComponent {
   title = 'portfolio';
+  visibilityArray = [false, false, false, false, false];
   isDarkEnable = false;
   presentTheme$ = new BehaviorSubject<string>('theme-light');
-  constructor(private cookieService: CookieService) {}
+  constructor(private cookieService: SsrCookieService) {}
   ngOnInit() {
     const savedTheme = this.cookieService.get('theme');
     if (savedTheme) {
@@ -30,5 +31,8 @@ export class AppComponent {
       : this.presentTheme$.next('theme-light');
     this.cookieService.set('theme', this.presentTheme$.value);
     this.isDarkEnable = !this.isDarkEnable;
+  }
+  changeState(e,i) {
+    this.visibilityArray[i] = e;
   }
 }

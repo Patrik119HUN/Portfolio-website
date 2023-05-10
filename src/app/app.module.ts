@@ -12,7 +12,10 @@ import { ContactModule } from './contact/contact.module';
 import { FooterComponent } from './footer/footer.component';
 
 import { NavbarModule } from './navbar/navbar.module';
-import { CookieService } from 'ngx-cookie-service';
+import { SsrCookieService } from 'ngx-cookie-service-ssr';
+
+import { provideClientHydration } from '@angular/platform-browser';
+import { TrackVisibilityModule } from './track-visibility/track-visibility.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,8 +24,15 @@ import { CookieService } from 'ngx-cookie-service';
     TechStackComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, ProjectsModule, ContactModule, AppRoutingModule,NavbarModule],
-  providers: [CookieService],
+  imports: [
+    BrowserModule,
+    ProjectsModule,
+    ContactModule,
+    AppRoutingModule,
+    NavbarModule,
+    TrackVisibilityModule,
+  ],
+  providers: [SsrCookieService, provideClientHydration()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

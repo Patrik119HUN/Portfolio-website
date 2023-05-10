@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { ProjectCard } from 'src/app/project-card';
 @Component({
   selector: 'app-projects',
@@ -6,6 +6,11 @@ import { ProjectCard } from 'src/app/project-card';
   styleUrls: ['./projects.component.css'],
 })
 export class ProjectsComponent {
+  monitor = true;
+  @Output() state: EventEmitter<boolean> = new EventEmitter();
+  visibilityChange(e) {
+    this.state.emit(e.isVisible);
+  }
   ProjectList: ProjectCard[] = [
     {
       title: 'To-do app',

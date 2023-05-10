@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import * as THREE from 'three';
 import { createNoise4D } from 'simplex-noise';
 @Component({
@@ -26,7 +26,8 @@ export class HeroComponent implements OnInit {
     createPlane();
     const camera = new THREE.PerspectiveCamera(
       75,
-      window.innerWidth / window.innerHeight,
+      document.documentElement.clientWidth /
+        document.documentElement.clientHeight,
       0.001,
       1000
     );
@@ -39,7 +40,11 @@ export class HeroComponent implements OnInit {
       antialias: true,
     });
     renderer.setClearColor(0xe232222, 1);
-    renderer.setSize(window.innerWidth, window.outerHeight, false);
+    renderer.setSize(
+      document.documentElement.clientWidth,
+      document.documentElement.clientHeight,
+      false
+    );
     var noise4D = createNoise4D();
     const animate = function () {
       for (var i = 0; i < geometry.getAttribute('position').count; i++) {
@@ -68,10 +73,22 @@ export class HeroComponent implements OnInit {
       document.querySelector('canvas').style.width = window.innerWidth + 'px';
       document.querySelector('canvas').style.height = window.outerHeight + 'px';
 
-      renderer.setSize(window.innerWidth, window.outerHeight,false);
+      renderer.setSize(
+        document.documentElement.clientWidth,
+        document.documentElement.clientHeight,
+        false
+      );
 
-      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.aspect =
+        document.documentElement.clientWidth /
+        document.documentElement.clientHeight;
       camera.updateProjectionMatrix();
     });
+  }
+
+  monitor = true;
+  @Output() state: EventEmitter<boolean> = new EventEmitter();
+  visibilityChange(e) {
+    this.state.emit(e.isVisible);
   }
 }

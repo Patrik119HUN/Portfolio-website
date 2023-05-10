@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-
 import { NavItem } from 'src/app/nav-item';
 
 @Component({

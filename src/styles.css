@@ -6,7 +6,8 @@ html {
   @apply scroll-smooth;
 }
 body {
-  @apply m-0 overflow-x-hidden bg-black;
+  @apply m-0 overflow-x-hidden;
+  background-color: #354f52;
 }
 :root {
   --primary: #354f52;
@@ -24,6 +25,7 @@ body {
 }
 
 *::-webkit-scrollbar-track {
+  border-radius: 10px;
   background: var(--primary);
 }
 

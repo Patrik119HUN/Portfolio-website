@@ -1,10 +1,16 @@
 <a href="{{ navItem.url }}" class="flex flex-row items-center gap-3 group">
   <span
-    class="inline-block w-12 h-12 p-6 transition-all rotate-45 border-2 rounded-md border-Dark-cyan group-hover:rotate-0 group-hover:bg-Dark-cyan"
+    class="inline-block w-12 h-12 p-6 transition-all rotate-45 border-2 rounded-md border-Dark-cyan"
+    [ngClass]="
+      navItem.isVisible
+        ? 'bg-Dark-cyan rotate-0'
+        : 'group-hover:bg-Dark-cyan group-hover:rotate-0'
+    "
   >
   </span>
   <p
-    class="relative left-0 text-3xl transition-all opacity-0 group-hover:opacity-100 font-fira-code text-Dark-cyan"
+    class="relative left-0 text-3xl transition-all opacity-0 font-fira-code text-Dark-cyan"
+    [ngClass]="navItem.isVisible ? 'opacity-100' : 'group-hover:opacity-100'"
   >
     {{ navItem.name }}
   </p>

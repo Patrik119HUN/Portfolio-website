@@ -1,5 +1,11 @@
 <canvas class="absolute top-0 -z-10 blur-sm" id="canvas-box"></canvas>
-<div class="flex flex-row justify-between h-screen p-10" id="hero">
+<div
+  class="flex flex-row justify-between h-screen p-10"
+  id="hero"
+  visibility
+  (visibilityChange)="visibilityChange($event)"
+  [visibilityMonitor]="monitor"
+>
   <p
     class="text-5xl left-6 text-Lime-green dark:text-Very-Dark-cyan font-fira-code w-fit"
   >
@@ -9,7 +15,7 @@
 </div>
 
 <div
-  class="absolute z-10 flex flex-row items-center px-24 -translate-y-2/3 top-1/2 w-max"
+  class="absolute z-10 flex flex-col items-center px-24 sm:flex-row -translate-y-2/3 top-1/2 w-max"
 >
   <div class="relative">
     <img src="assets/hi.png" class="w-[375px] mx-5 aspect-square z-10" alt="" />
@@ -21,20 +27,28 @@
   </div>
   <div class="flex flex-col">
     <h1
-      class="text-[64px] font-semibold text-Lime-green font-fira-code leading-[79px]"
+      class="md:text-[64px] text-2xl font-semibold text-Lime-green font-fira-code leading-[79px]"
     >
       Hi! <br />
       I'm Tukacs Patrik
     </h1>
-    <p class="text-4xl font-fira-code text-Lime-green">
+    <p class="text-lg md:text-4xl font-fira-code text-Lime-green">
       Web developer, programmer and <br />
       computer science engineer student.
     </p>
     <div class="flex flex-row gap-5 mt-5">
-      <a href="https://github.com/Patrik119HUN" target="_blank">
+      <a
+        class="transition-transform duration-300 delay-75 hover:-translate-y-2"
+        href="https://github.com/Patrik119HUN"
+        target="_blank"
+      >
         <img class="w-16 greenSVG" src="assets/stack/github.svg" alt="" />
       </a>
-      <a href="https://www.instagram.com/tukacs_patrik/" target="_blank">
+      <a
+        class="transition-transform duration-300 delay-75 hover:-translate-y-2"
+        href="https://www.instagram.com/tukacs_patrik/"
+        target="_blank"
+      >
         <img class="w-16 greenSVG" src="assets/instagram.svg" alt="" />
       </a>
     </div>
