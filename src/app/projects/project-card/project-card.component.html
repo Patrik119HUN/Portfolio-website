@@ -1,16 +1,16 @@
 <div
-  class="bg-Light-green  shadow-Lime-green aspect-square w-[402px] rounded-[10px] relative  shadow-[0_0_0_10px] transition-transform duration-300 delay-75 hover:-translate-y-2"
+  class="bg-Light-green shadow-Lime-green aspect-square w-72 xl:w-[402px] rounded-[10px] relative shadow-[0_0_0_10px] transition-transform duration-300 delay-75 hover:-translate-y-2"
 >
   <div class="px-4 pt-4 pb-[28px] flex flex-row align-baseline gap-[20px]">
     <img class="h-[50px] darkGreenSVG" src="assets/file.svg" alt="" />
     <h2
-      class="text-[42px] font-semibold text-Dark-cyan font-fira-code leading-[49px]"
+      class="xl:text-[42px] text-2xl font-semibold text-Dark-cyan font-fira-code leading-[49px]"
     >
       {{ projectCard.title }}
     </h2>
   </div>
   <p
-    class="font-fira-code px-4 text-Lime-green font-[450] text-3xl leading-[39px]"
+    class="font-fira-code px-4 text-Lime-green font-[450] text-lg xl:text-3xl leading-[39px]"
   >
     {{ projectCard.description }}
   </p>
@@ -22,7 +22,7 @@
     >
       {{ projectCard.technologies }}
     </p>
-    <a href="{{ projectCard.url }}" target="_blank">    
+    <a href="{{ projectCard.url }}" target="_blank">
       <img class="h-12 darkGreenSVG" src="assets/github-mark.svg" alt="" />
     </a>
   </div>

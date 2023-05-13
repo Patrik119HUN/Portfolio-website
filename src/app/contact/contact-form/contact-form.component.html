@@ -1,5 +1,5 @@
 <form [formGroup]="myForm" class="w-full h-full" (ngSubmit)="sendEmail($event)">
-  <div class="flex flex-col h-full m-5 justify-evenly">
+  <div class="flex flex-col h-full xl:m-0 m-5 justify-evenly">
     <div class="w-full h-1/5">
       <input
         type="text"
@@ -36,7 +36,7 @@
       </p>
     </div>
     <button
-      class="w-1/4 shadow-[0_0_0_10px] px-5 shadow-Lime-green rounded-[10px] bg-Light-green h-16 outline-0 text-2xl text-Very-Dark-cyan transition-transform duration-300 delay-75 hover:-translate-y-2"
+      class="w-min shadow-[0_0_0_10px] px-5 shadow-Lime-green rounded-[10px] bg-Light-green h-16 outline-0 text-lg md:text-2xl text-Very-Dark-cyan transition-transform duration-300 delay-75 hover:-translate-y-2"
       type="submit"
       [disabled]="!myForm.valid"
     >

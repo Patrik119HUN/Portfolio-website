@@ -1,0 +1,16 @@
+<app-wavebackground></app-wavebackground>
+<div
+  class="flex flex-row justify-between h-screen p-3 xl:p-10"
+  id="hero"
+  visibility
+  (visibilityChange)="visibilityChange($event)"
+  [visibilityMonitor]="monitor"
+>
+  <p
+    class="xl:text-5xl text-3xl left-6 text-Lime-green dark:text-Very-Dark-cyan font-fira-code w-fit"
+  >
+    Tukacs Patrik_
+  </p>
+  <ng-content select="[mode-button]"></ng-content>
+</div>
+<app-main></app-main>

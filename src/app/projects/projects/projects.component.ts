@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { constants } from 'node:crypto';
 import { ProjectCard } from 'src/app/project-card';
 @Component({
   selector: 'app-projects',
@@ -8,6 +9,7 @@ import { ProjectCard } from 'src/app/project-card';
 export class ProjectsComponent {
   monitor = true;
   @Output() state: EventEmitter<boolean> = new EventEmitter();
+
   visibilityChange(e) {
     this.state.emit(e.isVisible);
   }
