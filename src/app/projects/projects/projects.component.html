@@ -11,7 +11,7 @@
     >
       //My Projects
     </h2>
-    <div class="flex flex-row gap-24 w-screen p-4 px-36 xl:px-0 xl:justify-center overflow-x-scroll snap-mandatory snap-x overflow-y-hidden">
+    <div scrolla class="flex flex-row w-screen gap-24 p-4 overflow-x-scroll overflow-y-hidden flex-nowrap px-36 xl:px-0 xl:justify-center snap-mandatory snap-x">
       <app-project-card
         *ngFor="let projects of ProjectList"
         [projectCard]="projects"

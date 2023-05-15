@@ -26,7 +26,7 @@ export class NavbarComponent implements DoCheck, OnInit {
         isVisible: false,
       },
       {
-        name: 'Technologies',
+        name: 'Stack',
         url: '#stack',
         isVisible: false,
       },

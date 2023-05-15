@@ -14,16 +14,17 @@ body {
   --secondary: #cad2c5;
 }
 * {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   scrollbar-width: thin;
   scrollbar-color: var(--secondary) var(--primary);
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 15px;
+  width: 15px !important;
+  display: block !important;
 }
 
 *::-webkit-scrollbar-track {
@@ -36,15 +37,17 @@ body {
   border-radius: 14px;
   border: 3px solid var(--primary);
 }
-.darkGreenSVG {
-  filter: invert(45%) sepia(29%) saturate(362%) hue-rotate(114deg)
-    brightness(91%) contrast(89%);
+@layer components {
+  .darkGreenSVG {
+    filter: invert(45%) sepia(29%) saturate(362%) hue-rotate(114deg)
+      brightness(91%) contrast(89%);
+  }
+  .greenSVG {
+    filter: invert(68%) sepia(23%) saturate(347%) hue-rotate(81deg)
+      brightness(91%) contrast(84%);
+  }
 }
-.greenSVG {
-  filter: invert(68%) sepia(23%) saturate(347%) hue-rotate(81deg)
-    brightness(91%) contrast(84%);
-}
-.parallax{
+.parallax {
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;

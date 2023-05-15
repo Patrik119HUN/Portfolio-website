@@ -15,15 +15,15 @@
     {{ projectCard.description }}
   </p>
   <div
-    class="absolute bottom-0 flex flex-row items-baseline justify-between w-full px-4 pb-2"
+    class="absolute bottom-0 flex flex-row items-end justify-between w-full h-20 px-4 pb-2"
   >
     <p
-      class="font-mono text-base font-normal leading-5 opacity-75 text-Lime-green"
+      class="w-auto font-mono text-base font-normal leading-5 opacity-75 text-Lime-green"
     >
       {{ projectCard.technologies }}
     </p>
-    <a href="{{ projectCard.url }}" target="_blank">
-      <img class="h-12 darkGreenSVG" src="assets/github-mark.svg" alt="" />
+    <a class="w-12 h-12 " href="{{ projectCard.url }}" target="_blank">
+      <img class=" darkGreenSVG" src="assets/github-mark.svg" alt="" />
     </a>
   </div>
 </div>
